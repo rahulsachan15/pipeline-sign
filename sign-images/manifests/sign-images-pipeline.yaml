@@ -26,8 +26,8 @@ spec:
       params:
         - name: URL
           value: $(params.git-url)
-#        - name: deleteExisting
-#          value: 'true'
+        - name: DELETE_EXISTING
+          value: 'true'
 #        - name: revision
 #          value: $(params.git-revision)
       taskRef:
@@ -35,8 +35,8 @@ spec:
         params:
         - name: name
           value: git-clone
-        - name: namespace
-          value: openshift-pipelines
+#        - name: namespace
+#          value: openshift-pipelines
         - name: kind
           value: task
       workspaces:
