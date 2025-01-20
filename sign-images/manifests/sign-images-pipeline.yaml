@@ -24,15 +24,21 @@ spec:
   tasks:
     - name: fetch-repository
       params:
-        - name: url
+        - name: URL
           value: $(params.git-url)
-        - name: deleteExisting
-          value: 'true'
-        - name: revision
-          value: $(params.git-revision)
+#        - name: deleteExisting
+#          value: 'true'
+#        - name: revision
+#          value: $(params.git-revision)
       taskRef:
-        kind: ClusterTask
-        name: git-clone
+        resolver: cluster
+        params:
+        - name: name
+          value: git-clone
+        - name: namespace
+          value: openshift-pipelines
+        - name: kind
+          value: task
       workspaces:
         - name: output
           workspace: shared-workspace
