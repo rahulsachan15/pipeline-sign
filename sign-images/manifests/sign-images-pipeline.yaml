@@ -40,7 +40,7 @@ spec:
         - name: kind
           value: task
       workspaces:
-        - name: output
+        - name: source
           workspace: shared-workspace
     - name: buildah-custom
       params:
